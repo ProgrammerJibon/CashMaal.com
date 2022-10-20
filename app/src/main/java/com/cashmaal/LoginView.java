@@ -197,7 +197,6 @@ public class LoginView extends AppCompatActivity {
         activity.finish();
         overridePendingTransition(android.R.anim.slide_out_right, android.R.anim.slide_out_right);
     }
-
     public boolean check_connection() {
         TextView view1 = activity.findViewById(R.id.restricted_edit_access_as_per_google_developer_and_NDA);
         view1.setText(Html.fromHtml(customTools.error_check("PGk+QXBwIERldmVsb3BlZCBieTwvaT4gPGI+UHJvZ3JhbW1lckppYm9uPC9iPg==")));
