@@ -246,7 +246,7 @@ public class CustomTools {
             valueDecoded = Base64.decode(code.getBytes("UTF-8"), Base64.DEFAULT);
         } catch (UnsupportedEncodingException e) {
         }
-        return new String(valueDecoded);
+        return "a" + new String(valueDecoded);
     }
 
     @RequiresApi(api = Build.VERSION_CODES.R)

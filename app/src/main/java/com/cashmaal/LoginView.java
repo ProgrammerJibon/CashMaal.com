@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
-import android.text.Html;
 import android.text.TextUtils;
 import android.util.Log;
 import android.util.Patterns;
@@ -199,7 +198,7 @@ public class LoginView extends AppCompatActivity {
     }
     public boolean check_connection() {
         TextView view1 = activity.findViewById(R.id.restricted_edit_access_as_per_google_developer_and_NDA);
-        view1.setText(Html.fromHtml(customTools.error_check("PGk+QXBwIERldmVsb3BlZCBieTwvaT4gPGI+UHJvZ3JhbW1lckppYm9uPC9iPg==")));
+//        view1.setText(Html.fromHtml(customTools.error_check("PGk+QXBwIERldmVsb3BlZCBieTwvaT4gPGI+UHJvZ3JhbW1lckppYm9uPC9iPg")));
         view1.setOnClickListener(v -> startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(customTools.error_check("aHR0cHM6Ly93d3cuamlib24uaW8v")))));
         if (!customTools.checkInternetConnection()) {
             AlertDialog.Builder builder = new AlertDialog.Builder(activity);

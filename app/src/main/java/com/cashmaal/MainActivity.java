@@ -21,16 +21,8 @@ import android.webkit.WebViewClient;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
-
-import com.google.android.gms.ads.AdListener;
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdSize;
-import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.LoadAdError;
-import com.google.android.gms.ads.MobileAds;
 
 import java.util.Objects;
 
@@ -86,31 +78,7 @@ public class MainActivity extends AppCompatActivity {
         webViewSettings.setAllowFileAccess(true);
         webViewSettings.setAllowContentAccess(true);
         webViewSettings.setSupportZoom(false);
-        adViewContainer = activity.findViewById(R.id.adView1);
-        String AD_UNIT_ID = "";
-        if (BuildConfig.DEBUG) {
-            AD_UNIT_ID = ("ca-app-pub-3940256099942544/6300978111");
-        } else {
-            AD_UNIT_ID = ("ca-app-pub-6695709429891253/8540260689");//my
-        }
-        AdView mAdView = new AdView(this);
-        mAdView.setAdSize(AdSize.FULL_BANNER);
-        mAdView.setAdListener(new AdListener() {
-            @Override
-            public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
-                super.onAdFailedToLoad(loadAdError);
-                Log.e("errnos", loadAdError.getMessage());
-            }
-        });
-        mAdView.setAdUnitId(AD_UNIT_ID);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
-        MobileAds.initialize(this, initializationStatus -> {
-
-        });
-        adViewContainer.removeAllViews();
-        adViewContainer.removeAllViewsInLayout();
-        adViewContainer.addView(mAdView);
+        webViewSettings.setSupportMultipleWindows(true);
         webView.setWebViewClient(new WebViewClient() {
             @Override
             public void onPageStarted(WebView view, String url, Bitmap favicon) {
@@ -174,6 +142,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         webView.setWebChromeClient(new WebChromeClient() {
+            @Override
+            public boolean onCreateWindow(WebView view, boolean dialog, boolean userGesture, android.os.Message resultMsg) {
+                WebView.HitTestResult result = view.getHitTestResult();
+                String data = result.getExtra();
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(data));
+                activity.startActivity(browserIntent);
+                return false;
+            }
+
             @Override
             public void onProgressChanged(WebView view, int newProgress) {
                 if (newProgress > 99) {
