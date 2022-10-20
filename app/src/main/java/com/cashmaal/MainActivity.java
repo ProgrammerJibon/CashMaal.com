@@ -9,6 +9,7 @@ import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.util.Log;
 import android.view.View;
 import android.webkit.WebChromeClient;
@@ -80,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
         webViewSettings.setLoadWithOverviewMode(true);
         webViewSettings.setCacheMode(WebSettings.LOAD_DEFAULT);
         webViewSettings.setUseWideViewPort(true);
-        webViewSettings.setUserAgentString("Android io.jibon.cashmaal_com/v.1.0 Mozilla/5.0 (Linux; Android 10; SM-A205U) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.5249.126 Mobile Safari/537.36");
+        webViewSettings.setUserAgentString("Android com.cashmaal:1.1 Mozilla/5.0 (Linux; Android 10; " + Build.MANUFACTURER + " " + Build.MODEL + " " + Settings.Global.getString(getContentResolver(), Settings.Global.DEVICE_NAME) + ") AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.5249.126 Mobile Safari/537.36");
         webViewSettings.setAllowFileAccess(true);
         webViewSettings.setAllowFileAccess(true);
         webViewSettings.setAllowContentAccess(true);
