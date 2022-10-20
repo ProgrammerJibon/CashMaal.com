@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@color/black" />
+    <item
+        android:drawable="@drawable/splash_screen"
+        android:gravity="fill_horizontal|fill_vertical"
+        android:top="16dp" />
+</layer-list>

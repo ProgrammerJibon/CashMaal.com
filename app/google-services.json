@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "312803311947",
+    "project_id": "cashmaal-96437",
+    "storage_bucket": "cashmaal-96437.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:312803311947:android:ca43cbfa5c5f4f2680a8ce",
+        "android_client_info": {
+          "package_name": "com.cashmaal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "312803311947-73alsj4u7ir7469crg7k7trbtf8fahg5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCztUsgWraAox8K0k41sf2OTtZxBWpo2LE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "312803311947-73alsj4u7ir7469crg7k7trbtf8fahg5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:312803311947:android:ec196d04a3497de480a8ce",
+        "android_client_info": {
+          "package_name": "io.jibon.api.cashmaal_com"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "312803311947-73alsj4u7ir7469crg7k7trbtf8fahg5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCztUsgWraAox8K0k41sf2OTtZxBWpo2LE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "312803311947-73alsj4u7ir7469crg7k7trbtf8fahg5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
