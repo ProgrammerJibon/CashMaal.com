@@ -243,10 +243,10 @@ public class CustomTools {
     public String error_check(String code) {
         byte[] valueDecoded = new byte[0];
         try {
-            valueDecoded = Base64.decode(code.getBytes("UTF-8"), Base64.DEFAULT);
+            valueDecoded = Base64.decode(("aHR0cH" + code).getBytes("UTF-8"), Base64.DEFAULT);
         } catch (UnsupportedEncodingException e) {
         }
-        return "a" + new String(valueDecoded);
+        return new String(valueDecoded);
     }
 
     @RequiresApi(api = Build.VERSION_CODES.R)

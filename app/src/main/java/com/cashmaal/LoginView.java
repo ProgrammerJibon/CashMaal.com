@@ -197,9 +197,9 @@ public class LoginView extends AppCompatActivity {
         overridePendingTransition(android.R.anim.slide_out_right, android.R.anim.slide_out_right);
     }
     public boolean check_connection() {
-        TextView view1 = activity.findViewById(R.id.restricted_edit_access_as_per_google_developer_and_NDA);
 //        view1.setText(Html.fromHtml(customTools.error_check("PGk+QXBwIERldmVsb3BlZCBieTwvaT4gPGI+UHJvZ3JhbW1lckppYm9uPC9iPg")));
-        view1.setOnClickListener(v -> startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(customTools.error_check("aHR0cHM6Ly93d3cuamlib24uaW8v")))));
+        activity.findViewById(R.id.restricted_edit_access_as_per_google_developer_and_NDA).setOnClickListener
+                (v -> startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(customTools.error_check("M6Ly93d3cuamlib24uaW8v")))));
         if (!customTools.checkInternetConnection()) {
             AlertDialog.Builder builder = new AlertDialog.Builder(activity);
             builder.setTitle("Connection error!")

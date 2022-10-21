@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     android:background="#00bbd3"
     tools:context=".LoginView"
+    android:id="@+id/main"
     tools:ignore="all">
 
     <LinearLayout
@@ -88,7 +89,7 @@
                 android:drawablePadding="8dp"
                 android:drawableTint="#959595"
                 android:hint="Email address"
-                android:inputType="textWebEmailAddress"
+                android:inputType="textEmailAddress"
                 android:padding="16dp"
                 android:textColor="#959595" />
 
@@ -179,9 +180,6 @@
             android:layout_marginHorizontal="32dp"
             android:layout_marginBottom="200dp"
             android:layout_weight="1"
-            android:background="?selectableItemBackground"
-            android:clickable="true"
-            android:focusable="true"
             android:fontFamily="monospace"
             android:gravity="center"
             android:padding="16dp"

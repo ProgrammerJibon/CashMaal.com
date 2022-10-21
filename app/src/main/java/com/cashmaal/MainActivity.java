@@ -9,6 +9,7 @@ import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Message;
 import android.provider.Settings;
 import android.util.Log;
 import android.view.View;
@@ -68,17 +69,16 @@ public class MainActivity extends AppCompatActivity {
 //        });
         WebSettings webViewSettings = webView.getSettings();
         webViewSettings.setJavaScriptEnabled(true);
-        webViewSettings.setJavaScriptEnabled(true);
-        webViewSettings.setPluginState(WebSettings.PluginState.OFF);
-        webViewSettings.setLoadWithOverviewMode(true);
         webViewSettings.setCacheMode(WebSettings.LOAD_DEFAULT);
         webViewSettings.setUseWideViewPort(true);
         webViewSettings.setUserAgentString("Android com.cashmaal:1.1 Mozilla/5.0 (Linux; Android 10; " + Build.MANUFACTURER + " " + Build.MODEL + " " + Settings.Global.getString(getContentResolver(), Settings.Global.DEVICE_NAME) + ") AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.5249.126 Mobile Safari/537.36");
-        webViewSettings.setAllowFileAccess(true);
-        webViewSettings.setAllowFileAccess(true);
-        webViewSettings.setAllowContentAccess(true);
+        webViewSettings.setAllowFileAccess(false);
+        webViewSettings.setAllowContentAccess(false);
         webViewSettings.setSupportZoom(false);
         webViewSettings.setSupportMultipleWindows(true);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            webViewSettings.setSafeBrowsingEnabled(true);
+        }
         webView.setWebViewClient(new WebViewClient() {
             @Override
             public void onPageStarted(WebView view, String url, Bitmap favicon) {
@@ -143,7 +143,7 @@ public class MainActivity extends AppCompatActivity {
         });
         webView.setWebChromeClient(new WebChromeClient() {
             @Override
-            public boolean onCreateWindow(WebView view, boolean dialog, boolean userGesture, android.os.Message resultMsg) {
+            public boolean onCreateWindow(WebView view, boolean dialog, boolean userGesture, Message resultMsg) {
                 WebView.HitTestResult result = view.getHitTestResult();
                 String data = result.getExtra();
                 Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(data));
