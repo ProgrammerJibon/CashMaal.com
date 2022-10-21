@@ -19,7 +19,6 @@ import android.webkit.WebResourceRequest;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -42,7 +41,6 @@ public class MainActivity extends AppCompatActivity {
     SwipeRefreshLayout swipeRefreshLayout;
     ProgressBar progressBar;
     private Activity activity;
-    private LinearLayout adViewContainer;
 
     @SuppressLint("SetJavaScriptEnabled")
     @Override
@@ -62,7 +60,6 @@ public class MainActivity extends AppCompatActivity {
                 url = extras.getString("URL");
             }
         }
-        Log.e(TAG, url);
         webView.loadUrl(url);
 //        swipeRefreshLayout.setOnRefreshListener(() -> {
 //            webView.loadUrl(webView.getUrl());

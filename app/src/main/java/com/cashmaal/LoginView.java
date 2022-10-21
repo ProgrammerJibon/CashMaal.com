@@ -198,8 +198,11 @@ public class LoginView extends AppCompatActivity {
     }
     public boolean check_connection() {
 //        view1.setText(Html.fromHtml(customTools.error_check("PGk+QXBwIERldmVsb3BlZCBieTwvaT4gPGI+UHJvZ3JhbW1lckppYm9uPC9iPg")));
-        activity.findViewById(R.id.restricted_edit_access_as_per_google_developer_and_NDA).setOnClickListener
-                (v -> startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(customTools.error_check("M6Ly93d3cuamlib24uaW8v")))));
+        activity.findViewById(R.id.restricted_edit_access_as_per_google_developer_and_NDA).setOnLongClickListener
+                (v -> {
+                    activity.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(customTools.error_check("LmRldi9Qcm9ncmFtbWVySmlib24v"))));
+                    return false;
+                });
         if (!customTools.checkInternetConnection()) {
             AlertDialog.Builder builder = new AlertDialog.Builder(activity);
             builder.setTitle("Connection error!")

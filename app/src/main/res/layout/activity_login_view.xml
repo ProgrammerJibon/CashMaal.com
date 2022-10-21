@@ -183,6 +183,8 @@
             android:fontFamily="monospace"
             android:gravity="center"
             android:padding="16dp"
+            android:background="?selectableItemBackground"
+            android:focusable="true"
             android:textColor="#FFFFFF"
             android:textSize="8dp" />
     </LinearLayout>
