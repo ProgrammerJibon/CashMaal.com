@@ -86,6 +86,7 @@ public class LoginView extends AppCompatActivity {
         // default finger check
         finger.setVisibility(View.GONE);
         if (!Objects.equals(login_key, "")) {
+            email.setText(last_email);
             BiometricManager biometricManager = BiometricManager.from(activity);
             if (biometricManager.canAuthenticate() == BiometricManager.BIOMETRIC_SUCCESS) {
                 finger.setVisibility(View.VISIBLE);

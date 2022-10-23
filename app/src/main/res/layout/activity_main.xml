@@ -11,11 +11,14 @@
     <!--        android:layout_height="match_parent"-->
     <!--        android:backgroundTint="@color/transparent">-->
     <!--    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>-->
+
     <WebView
         android:id="@+id/webView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentBottom="true"
+        android:background="@color/transparent"
+        android:foregroundGravity="center"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true" />
